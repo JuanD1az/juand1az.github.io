@@ -29,19 +29,6 @@
     overflow: hidden;
 }
 
-.carousel .card:hover {
-    scale: 1.1;
-    z-index: 9999;
-}
-
-.owl-item.active{
-    z-index: 1;
-}
-
-.owl-item.active:hover{
-    z-index: 2;
-}
-
 .owl-dots{
     text-align: center;
     margin-top: 40px;
