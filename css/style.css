@@ -1,0 +1,26 @@
+@import "container.css";
+@import "home-content.css";
+@import "projects-content.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --color-background: #262f3b;
+  --color-background2: #0f1926;
+  --rgba: rgba(255, 255, 255, .1);
+  --color1: #ededed;
+  --color2: #b7b9f4;
+
+  --nav-font-logo: 25px;
+  --nav-font-item: 18px;
+}
+
+body{
+  background: white;
+  color: var(--color1);
+}

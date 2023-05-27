@@ -1,0 +1,107 @@
+/* INTRO CONTENEDOR */
+.cd-intro-block {
+  position: relative;
+  z-index: 2;    
+  height: 100vh;
+  width: 100%;
+  background: url(../img/bg1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.67, 0.15, 0.83, 0.83);
+  -moz-transition-timing-function: cubic-bezier(0.67, 0.15, 0.83, 0.83);
+  transition-timing-function: cubic-bezier(0.67, 0.15, 0.83, 0.83);
+}
+
+.cd-intro-block::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+  background: url(../img/cd-arrow-back.png) no-repeat center center;
+  opacity: 0;
+
+  top: 95%;
+  height: 24px;
+  width: 24px;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.cd-intro-block.projects-visible {
+  -webkit-transform: translateY(-93%);
+  -moz-transform: translateY(-93%);
+  -ms-transform: translateY(-93%);
+  -o-transform: translateY(-93%);
+  transform: translateY(-93%);
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.cd-intro-block.projects-visible:after {
+  opacity: 1;
+}
+
+@media only screen and (min-width: 900px) {
+  .cd-intro-block::after {
+    top: 97.5%;
+  }
+  .cd-intro-block h1 {
+    font-size: 4.4rem;
+    font-weight: 300;
+  }
+  .cd-intro-block.projects-visible {
+    -webkit-transform: translateY(-95%);
+    -moz-transform: translateY(-95%);
+    -ms-transform: translateY(-95%);
+    -o-transform: translateY(-95%);
+    transform: translateY(-95%);
+  }
+}
+
+/* PROJECTS CONTENEDOR */
+
+.cd-projects-wrapper {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background-color: var(--color-background2);
+  -webkit-transition: visibility 0s 0.5s;
+  -moz-transition: visibility 0s 0.5s;
+  transition: visibility 0s 0.5s;
+
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cd-projects-wrapper::before {
+  display: none;
+}
+
+.cd-projects-wrapper.projects-visible {
+  visibility: visible;
+  -webkit-transition: visibility 0s 0s;
+  -moz-transition: visibility 0s 0s;
+  transition: visibility 0s 0s;
+}
